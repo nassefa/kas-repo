@@ -36,10 +36,10 @@
 				<cloudHubDeployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <muleVersion>4.3.0</muleVersion>
-                        <username>ITSkills</username>
-                        <password>Skills23</password>
+                        <username>${anypoint.username}</username>
+                        <password>${anypoint.password}</password>
                         <applicationName>test-cicd-with-kas</applicationName>
-                        <environment>Sandbox</environment>
+                        <environment>${anypoint.environment}</environment>
                         <workerType>MICRO</workerType>
                         <objectStoreV2>true</objectStoreV2>
                     </cloudHubDeployment>
