@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a1338388-5604-47be-b23c-e770dec89437" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="test-cicd-with-kasFlow" doc:id="2b59c403-0cd2-4017-a5d3-13f10cbdb2d5" >
+		<http:listener doc:name="Listener" doc:id="8b25bb1e-019e-4985-ab2b-5862d397320c" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="Hello CI CD" doc:name="Set Payload" doc:id="b4f8e86e-ab6c-47c2-a2e3-e7e4b98bb220" />
+		<logger level="INFO" doc:name="Logger" doc:id="c55fbb11-d111-41b1-9cfc-5049c938c7b3" message="#[payload]"/>
+	</flow>
+</mule>
