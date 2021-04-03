@@ -27,6 +27,7 @@
 			</plugin>
 			<!-- cloudhub mule config plugin -->
 			<!-- new comment -->
+			<!-- additional comment -->
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
