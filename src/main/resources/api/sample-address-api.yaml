@@ -1,0 +1,102 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "sample-address-api",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://sample-address-api.us-e2.cloudhub.io/"
+    }
+  ],
+  "paths": {
+    "/persons": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": [
+                    {
+                      "id": 1,
+                      "name": "Edgar Moran",
+                      "username": "emoran",
+                      "email": "yucel.moran@some.test",
+                      "address": {
+                        "street": "Kulas Light",
+                        "suite": "Apt. 556",
+                        "city": "Gwenborough",
+                        "zipcode": "92998-3874",
+                        "geo": {
+                          "lat": "-37.3159",
+                          "lng": "81.1496"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "Created"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "bad request\n\"$schema\": \"https://json-schema.org/draft-04/schema#\",\n\"type\": \"object\",\n\"properties\": {\n  \"firstName\": {\n    \"type\": \"string\"\n  },\n  \"lastName\": {\n    \"type\": \"string\"\n  },\n  \"age\": {\n    \"type\": \"integer\"\n  }\n},\n\"required\": [\n  \"firstName\",\n  \"lastName\",\n  \"age\"\n]\n"
+          },
+          "403": {
+            "description": "invalid request\n"
+          },
+          "404": {
+            "description": "No description."
+          },
+          "429": {
+            "description": "Invalid get."
+          },
+          "500": {
+            "description": "Server error\n"
+          }
+        },
+        "operationId": "GET_persons",
+        "security": [
+          {
+            "oauth_2_0": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "parameters": {},
+    "examples": {},
+    "requestBodies": {},
+    "headers": {},
+    "securitySchemes": {
+      "oauth_2_0": {
+        "description": "This API supports OAuth 2.0 for authenticating all API requests.\n",
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "INSERT_OAUTH2_ACCESS_TOKEN_URI",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "links": {},
+    "callbacks": {}
+  }
+}
